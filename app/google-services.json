@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "48970766177",
+    "project_id": "appfuncionesfirebasejava",
+    "storage_bucket": "appfuncionesfirebasejava.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:48970766177:android:3407d4a1ac971c36a59720",
+        "android_client_info": {
+          "package_name": "edu.pe.idat.appcamarapermisostorage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "48970766177-32hk2okfeggapg2anc0np6mabnip5cvp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.pe.idat.appcamarapermisostorage",
+            "certificate_hash": "05d59dce9b5e0da5a1b636398caec6e7e607019f"
+          }
+        },
+        {
+          "client_id": "48970766177-mi6pjjph0mna7sqstkf387eq2d3a79fb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIfyLy1FNBo6nrhY8M-dzCJXp-CRt1gWk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "48970766177-mi6pjjph0mna7sqstkf387eq2d3a79fb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,4 +3,9 @@
     <string name="valtitulo">EJERCICIO PERMISO Y USO DE LA CÁMARA</string>
     <string name="valbtntomarfoto">TOMAR FOTO</string>
     <string name="valbtncompartir">COMPARTIR FOTO</string>
+    <string name="valbtnstoragefirebase">SUBIR A FIREBASE STORAGE</string>
+    <string name="valtitulologin">AUTENTICACIÓN FIREBASE</string>
+    <string name="valetemail">Ingrese su email</string>
+    <string name="valetpassword">Ingrese su password</string>
+    <string name="valbtnlogin">INGRESAR</string>
 </resources>

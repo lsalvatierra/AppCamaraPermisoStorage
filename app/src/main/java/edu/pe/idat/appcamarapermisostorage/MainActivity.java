@@ -19,6 +19,12 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -31,12 +37,14 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private static final int CAMERA_REQUEST= 1880;
     String mRutaFotoActual;
+    FirebaseStorage storage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        storage = FirebaseStorage.getInstance();
         binding.btntomarfoto.setOnClickListener(view ->{
             if(PermisoEscrituraAlmacenamiento()){
                 intencionTomarFoto();
@@ -62,6 +70,30 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(eleccionIntent);
                 }
             }
+        });
+
+        binding.btnstoragefirebase.setOnClickListener(view ->{
+            StorageReference storageRef = storage.getReference();
+            Uri file = Uri.fromFile(new File(mRutaFotoActual));
+            StorageReference riversRef = storageRef.child("imagenes/"+file.getLastPathSegment());
+            UploadTask uploadTask = riversRef.putFile(file);
+            // Register observers to listen for when the download is done or if it fails
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    Toast.makeText(MainActivity.this,
+                            "Error al subir imagen",
+                            Toast.LENGTH_SHORT).show();
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(MainActivity.this,
+                            "Imagen subida a Cloud Storage",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
         });
 
     }
