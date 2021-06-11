@@ -8,4 +8,5 @@
     <string name="valetemail">Ingrese su email</string>
     <string name="valetpassword">Ingrese su password</string>
     <string name="valbtnlogin">INGRESAR</string>
+    <string name="valbtnlogingoogle">LOGIN GOOGLE</string>
 </resources>
